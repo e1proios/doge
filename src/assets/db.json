@@ -1,10 +1,21 @@
 
 {
-  "posts": [
-    { "id": 1, "title": "json-server", "author": "typicode" }
-  ],
-  "comments": [
-    { "id": 1, "body": "some comment", "postId": 1 }
-  ],
-  "profile": { "name": "typicode" }
+  "courses": [
+    {
+      "id": 0,
+      "name": "How to Recognise Different Types of Trees from Quite a Long Way Away",
+      "description": "The larch!",
+      "active": true
+    }, {
+      "id": 1,
+      "name": "How Not to Be Seen",
+      "description": "It's common sense really, If they can't see you they can't get you.",
+      "active": true
+    }, {
+      "id": 2,
+      "name": "How to Recognise Different Parts of the Body",
+      "description": "No Pooftahs!",
+      "active": true
+    }
+  ]
 }
