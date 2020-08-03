@@ -10,11 +10,13 @@ import { CoursesQuery } from './components/courses/store/courses.query';
 
 import { AppComponent } from './app.component';
 import { CoursesComponent } from './components/courses/courses.component';
+import { EditCourseWowComponent } from './components/courses/edit-course-wow.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CoursesComponent
+    CoursesComponent,
+    EditCourseWowComponent
   ],
   imports: [
     BrowserModule,

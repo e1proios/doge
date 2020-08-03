@@ -1,19 +1,20 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+
+import { Component, OnInit } from '@angular/core';
+
+import { CoursesService } from './components/courses/services/courses.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 
   constructor(
-    private _router: Router
+    private _coursesSvc: CoursesService,
   ) {}
 
-  muchWow() {
-    console.log("MUCH WOW");
-    this._router.navigate(['/wow']);
+  ngOnInit() {
+    this._coursesSvc.getCourses();
   }
 }

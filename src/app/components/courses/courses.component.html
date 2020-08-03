@@ -1,6 +1,8 @@
 
 <div class="doge-courses">
-  <table class="table table-striped table-bordered">
+  <table *ngIf="courses.length"
+    class="table table-striped table-bordered">
+
     <thead class="thead-dark">
       <tr>
         <th *ngFor="let f of fields">{{f}}</th>
@@ -8,12 +10,8 @@
     </thead>
     <tbody>
       <tr class="doge-course"
-        *ngFor="let course of $courses | async">
-
-        <th scope="row">{{course.id}}</th>
-        <td>{{course.name}}</td>
-        <td>{{course.description}}</td>
-        <td>{{course.active}}</td>
+        *ngFor="let course of courses">
+        <td *ngFor="let key of fields">{{course[key]}}</td>
       </tr>
     </tbody>
   </table>

@@ -2,8 +2,8 @@
   <img src="./assets/akita-wow.jpg" alt="much wow">
 
   <div class="much-navigation-wow">
-    <button class="btn btn-danger much-wow-btn" (click)="muchWow()">MUCH WOW</button>
-    <button class="btn btn-info much-wow-btn">VERY AMAZE</button>
+    <button class="btn btn-danger much-wow-btn" [routerLink]="['/wow']">MUCH WOW</button>
+    <button class="btn btn-info much-wow-btn" [routerLink]="['/amaze']">VERY AMAZE</button>
   </div>
 
   <router-outlet></router-outlet>
