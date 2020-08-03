@@ -14,6 +14,7 @@ import { CoursesQuery } from './store/courses.query';
 })
 export class CoursesComponent implements OnInit {
   $courses: Observable<Course[]>;
+  fields: string[];
 
   constructor(
     private _coursesSvc: CoursesService,
@@ -23,5 +24,6 @@ export class CoursesComponent implements OnInit {
   ngOnInit() {
     this._coursesSvc.getCourses();
     this.$courses = this._coursesQuery.selectAll();
+    this.fields = ['id', 'name', 'description', 'active'];
   }
 }
