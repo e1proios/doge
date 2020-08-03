@@ -1,7 +1,11 @@
 
 import { Component, OnInit } from '@angular/core';
 
+import { Observable } from 'rxjs';
+
+import { Course } from './types/course';
 import { CoursesService } from './services/courses.service';
+import { CoursesQuery } from './store/courses.query';
 
 @Component({
   selector: 'doge-courses-wow',
@@ -9,15 +13,15 @@ import { CoursesService } from './services/courses.service';
   styleUrls: ['./courses.component.scss']
 })
 export class CoursesComponent implements OnInit {
+  $courses: Observable<Course[]>;
 
   constructor(
-    private _coursesSvc: CoursesService
+    private _coursesSvc: CoursesService,
+    private _coursesQuery: CoursesQuery
   ) {}
 
   ngOnInit() {
     this._coursesSvc.getCourses();
-  }
-  muchWow() {
-    console.log("MUCH WOW");
+    this.$courses = this._coursesQuery.selectAll();
   }
 }
