@@ -1,4 +1,14 @@
 
 <div class="such-add-much-wow">
 
+  <form [formGroup]="editCourseForm">
+
+    <label for="name">Name</label>
+    <input id="name" type="text" formControlName="name">
+
+    <label for="description">Description</label>
+    <input id="description" type="text" formControlName="description">
+  </form>
+
+  <button (click)="onSubmit()" class="btn btn-info">EDIT/ADD</button>
 </div>
