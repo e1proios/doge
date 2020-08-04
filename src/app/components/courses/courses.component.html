@@ -1,4 +1,3 @@
-
 <div class="doge-courses">
   <table *ngIf="courses.length; else noCourses"
     class="table table-striped table-bordered">
@@ -22,7 +21,7 @@
     </tbody>
   </table>
 
-  <div #noCourses>
+  <ng-template #noCourses>
     <h1>Such sad, not wow!</h1>
-  </div>
+  </ng-template>
 </div>

@@ -12,12 +12,14 @@ import { CoursesQuery } from './components/courses/store/courses.query';
 import { AppComponent } from './app.component';
 import { CoursesComponent } from './components/courses/courses.component';
 import { EditCourseWowComponent } from './components/courses/edit-course-wow.component';
+import { DogeShibeComponent } from './components/doge-shibe/doge-shibe.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CoursesComponent,
-    EditCourseWowComponent
+    EditCourseWowComponent,
+    DogeShibeComponent
   ],
   imports: [
     BrowserModule,
