@@ -1,10 +1,29 @@
 <div class="app-container container">
-  <img src="./assets/akita-wow.jpg" alt="much wow">
 
-  <div class="much-navigation-wow">
-    <button class="btn btn-danger much-wow-btn" [routerLink]="['/wow']">MUCH WOW</button>
-    <button class="btn btn-info much-wow-btn" [routerLink]="['/amaze']">VERY AMAZE</button>
+  <div class="col-6">
+    <div class="much-navigation-wow">
+      <button class="btn btn-warning much-wow-btn"
+        [routerLink]="['/']">
+        GO SHIBE
+      </button>
+
+      <button class="btn btn-info much-wow-btn"
+        [routerLink]="['/wow']">
+        MUCH WOW
+      </button>
+
+      <button class="btn btn-dark much-wow-btn"
+        [routerLink]="['/amaze']">
+        VERY AMAZE
+      </button>
+    </div>
+
+    <div class="very-functionality">
+      <router-outlet></router-outlet>
+    </div>
   </div>
 
-  <router-outlet></router-outlet>
+  <div class="col-6">
+    <img src="./assets/akita-wow.jpg" alt="much wow" class="doge-face">
+  </div>
 </div>

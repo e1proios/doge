@@ -1,19 +1,26 @@
 
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { Course } from './types/course';
 import { CoursesQuery } from './store/courses.query';
 
 @Component({
   selector: 'doge-courses-wow',
-  templateUrl: './courses.component.html'
+  templateUrl: './courses.component.html',
+  styles: [`
+    .much-edit-wow-button:hover {
+      color: red;
+    }
+  `]
 })
 export class CoursesComponent implements OnInit {
   courses: Course[];
   fields: string[];
 
   constructor(
-    private _coursesQuery: CoursesQuery
+    private _coursesQuery: CoursesQuery,
+    private _router: Router
   ) {}
 
   ngOnInit() {
@@ -24,5 +31,8 @@ export class CoursesComponent implements OnInit {
         this.courses = courses;
       }
     });
+  }
+  editCourse(courseId: number) {
+    this._router.navigate(['/amaze', courseId]);
   }
 }

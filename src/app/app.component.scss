@@ -2,14 +2,16 @@
 .app-container {
   padding-top: 20px;
   display: flex;
-  align-items: center;
-  flex-flow: column;
+  flex-flow: row;
 }
-
 .much-navigation-wow {
   display: flex;
   flex-flow: row;
+  justify-content: center;
 }
 .much-wow-btn {
   margin: 12px;
+}
+.doge-face {
+ max-width: 100%;
 }

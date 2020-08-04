@@ -22,21 +22,34 @@ export class CoursesService {
       }
     );
   }
-  addCourse({ name, description }: Partial<Course>) {
+  updateCourse(course: Course) {
+    let headers = new HttpHeaders().append('Content-Type', 'application/json');
+
+    this._http.put('/api/courses/' + course.id, course, { headers: headers }).subscribe(
+      data => {
+        console.log('post success ' + JSON.stringify(data));
+        this._coursesStore.update(course.id, course);
+      },
+      err => {
+        console.log(err);
+      }
+    );
+  }
+  addCourse({ name, description}: Partial<Course>) {
     let headers = new HttpHeaders().append('Content-Type', 'application/json');
 
     ++this._idCounter;
     const newCourse = {
       id: this._idCounter,
+      active: true,
       name,
-      description,
-      active: true
+      description
     };
 
-    this._coursesStore.add(newCourse);
     this._http.post('/api/courses', newCourse, { headers: headers}).subscribe(
       data => {
         console.log('post success ' + JSON.stringify(data));
+        this._coursesStore.add(newCourse);
       },
       err => {
         console.log(err);

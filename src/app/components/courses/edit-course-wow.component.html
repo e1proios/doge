@@ -3,12 +3,25 @@
 
   <form [formGroup]="editCourseForm">
 
-    <label for="name">Name</label>
-    <input id="name" type="text" formControlName="name">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input id="name"
+        type="text"
+        class="form-control"
+        formControlName="name"
+        placeholder="Course name">
+    </div>
 
-    <label for="description">Description</label>
-    <input id="description" type="text" formControlName="description">
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea id="description"
+        rows="3"
+        class="form-control"
+        formControlName="description"
+        placeholder="provide description here">
+      </textarea>
+    </div>
   </form>
 
-  <button (click)="onSubmit()" class="btn btn-info">EDIT/ADD</button>
+  <button (click)="saveCourse()" class="btn btn-danger">{{buttonLabel}}</button>
 </div>

@@ -6,7 +6,8 @@ import { EditCourseWowComponent } from './components/courses/edit-course-wow.com
 
 const routes: Routes = [
   { path: 'wow', component: CoursesComponent },
-  { path: 'amaze', component: EditCourseWowComponent }
+  { path: 'amaze', component: EditCourseWowComponent },
+  { path: 'amaze/:id', component: EditCourseWowComponent }
 ];
 
 @NgModule({
