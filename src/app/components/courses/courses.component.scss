@@ -1,0 +1,23 @@
+
+.doge-actions-list {
+  display: flex;
+  flex-flow: column;
+}
+.such-disabled {
+  color: #ccc;
+
+  .very-switch {
+    color: #F00;
+
+    &:hover {
+      color: #212529;
+    }
+  }
+}
+.doge-course:not(.such-disabled) {
+  .much-edit-wow-button {
+    &:hover {
+      color: red;
+    }
+  }
+}

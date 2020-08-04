@@ -3,16 +3,13 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { Course } from './types/course';
+import { CoursesService } from './services/courses.service';
 import { CoursesQuery } from './store/courses.query';
 
 @Component({
   selector: 'doge-courses-wow',
   templateUrl: './courses.component.html',
-  styles: [`
-    .much-edit-wow-button:hover {
-      color: red;
-    }
-  `]
+  styleUrls: ['./courses.component.scss']
 })
 export class CoursesComponent implements OnInit {
   courses: Course[];
@@ -20,6 +17,7 @@ export class CoursesComponent implements OnInit {
 
   constructor(
     private _coursesQuery: CoursesQuery,
+    private _coursesSvc: CoursesService,
     private _router: Router
   ) {}
 
@@ -32,7 +30,13 @@ export class CoursesComponent implements OnInit {
       }
     });
   }
-  editCourse(courseId: number) {
+  openCourseEditor(courseId: number) {
     this._router.navigate(['/amaze', courseId]);
+  }
+  deleteCourse(courseId: number) {
+
+  }
+  switchCourseActivity(courseId: number) {
+
   }
 }

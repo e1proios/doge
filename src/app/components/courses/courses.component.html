@@ -10,13 +10,32 @@
     </thead>
     <tbody>
       <tr class="doge-course"
+        [ngClass]="{ 'such-disabled': !course.active }"
         *ngFor="let course of courses">
         <td *ngFor="let key of fields">{{course[key]}}</td>
+
         <td>
-          <a role="button"
-            class="much-edit-wow-button"
-            (click)="editCourse(course.id)">&gt;EDIT&lt;</a>
+          <div class="doge-actions-list">
+            <a role="button"
+              class="much-edit-wow-button"
+              (click)="course.active && openCourseEditor(course.id)">
+              &gt;edit&lt;
+            </a>
+
+            <a role="button"
+              class="much-edit-wow-button"
+              (click)="course.active && deleteCourse(course.id)">
+              &gt;delete&lt;
+            </a>
+
+            <a role="button"
+              class="much-edit-wow-button very-switch"
+              (click)="switchCourseActivity(course.id)">
+              &gt;{{course.active ? 'deactivate' : 'activate'}}&lt;
+            </a>
+          </div>
         </td>
+
       </tr>
     </tbody>
   </table>
