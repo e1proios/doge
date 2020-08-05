@@ -24,9 +24,9 @@ export class CoursesComponent implements OnInit {
   ngOnInit() {
     this.courses = [];
     this._coursesQuery.selectAll().subscribe(courses => {
-      if (courses && courses.length) {
+      this.courses = courses;
+      if (courses.length) {
         this.fields = Object.keys(courses[0]);
-        this.courses = courses;
       }
     });
   }
@@ -34,9 +34,12 @@ export class CoursesComponent implements OnInit {
     this._router.navigate(['/amaze', courseId]);
   }
   deleteCourse(courseId: number) {
-
+    this._coursesSvc.deleteCourse(courseId);
   }
-  switchCourseActivity(courseId: number) {
-
+  switchCourseActivity(course: Course) {
+    this._coursesSvc.updateCourse({
+      ...course,
+      active: !course.active
+    });
   }
 }

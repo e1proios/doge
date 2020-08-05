@@ -1,8 +1,6 @@
 
-import { ID } from '@datorama/akita';
-
 export interface Course {
-  id: ID;
+  id: number;
   name: string;
   description: string;
   active: boolean;

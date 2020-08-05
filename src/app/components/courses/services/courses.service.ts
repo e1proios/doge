@@ -17,17 +17,20 @@ export class CoursesService {
   getCourses() {
     this._http.get('/api/courses').subscribe(
       (response: Course[]) => {
+        response.sort((first: Course, second: Course) => {
+          return first.id - second.id;
+        });
         this._coursesStore.add(response);
         this._idCounter = response[response.length - 1].id;
       }
     );
   }
-  updateCourse(course: Course) {
+  updateCourse(course: Partial<Course>) {
     let headers = new HttpHeaders().append('Content-Type', 'application/json');
 
     this._http.put('/api/courses/' + course.id, course, { headers: headers }).subscribe(
       data => {
-        console.log('post success ' + JSON.stringify(data));
+        console.log('course updated ' + JSON.stringify(data));
         this._coursesStore.update(course.id, course);
       },
       err => {
@@ -48,8 +51,21 @@ export class CoursesService {
 
     this._http.post('/api/courses', newCourse, { headers: headers}).subscribe(
       data => {
-        console.log('post success ' + JSON.stringify(data));
+        console.log('new course added ' + JSON.stringify(data));
         this._coursesStore.add(newCourse);
+      },
+      err => {
+        console.log(err);
+      }
+    );
+  }
+  deleteCourse(id: number) {
+    let headers = new HttpHeaders().append('Content-Type', 'application/json');
+
+    this._http.delete('/api/courses/' + id, { headers: headers}).subscribe(
+      response => {
+        console.log('course ' + id + ' deleted');
+        this._coursesStore.remove(id);
       },
       err => {
         console.log(err);
