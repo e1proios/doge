@@ -8,3 +8,7 @@
 3. run `ng serve`
 
 4. enjoy helpful doge app
+
+# Tech & tools
+
+TypeScript, Akita, json-server
