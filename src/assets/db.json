@@ -9,7 +9,7 @@
     {
       "id": 3,
       "name": "How to Recognise Different Parts of the Body",
-      "description": "No Pooftahs!",
+      "description": "I don't want to catch anyone not drinking in their room after lights out.",
       "active": false
     },
     {
@@ -17,18 +17,16 @@
       "name": "How to Recognise Different Types of Trees from Quite a Long Way Away",
       "description": "The larch!",
       "active": true
-    },
-    {
+    }, {
+      "id": 5,
+      "name": "Full Frontal Nudity",
+      "description": "Good evening. I'd like to talk to you tonight about the place of the nude in my bed ... um ...",
+      "active": true
+    }, {
       "id": 4,
-      "name": "How not to be gay",
-      "description": "Simply stop enjoying sodomy every day, you disgusting homo!",
+      "name": "The All-England Summarize Proust Competition",
+      "description": "Proust's novel ostensibly tells of the irrevocability of time lost, the forfeiture of innocence...",
       "active": false
-    },
-    {
-      "id": 6,
-      "active": true,
-      "name": "How to get money and fuck bitches",
-      "description": "Words of wisdom from 2Pac, da real OG"
     }
   ]
 }

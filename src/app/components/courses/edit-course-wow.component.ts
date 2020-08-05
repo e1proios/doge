@@ -31,13 +31,13 @@ export class EditCourseWowComponent implements OnInit {
     });
 
     this._route.params.subscribe(params => {
-      this.buttonLabel = "MUCH ADD";
+      this.buttonLabel = "ADD NEW";
 
       if (params.id) {
         this._query.selectEntity(params.id).subscribe(course => {
           if (course) {
             this._providedCourse = course;
-            this.buttonLabel = "SUCH EDIT";
+            this.buttonLabel = "SAVE CHANGES";
 
             this.editCourseForm.patchValue({
               name: course.name,

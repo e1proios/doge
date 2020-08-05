@@ -23,7 +23,7 @@ export class CoursesComponent implements OnInit {
 
   ngOnInit() {
     this.courses = [];
-    this._coursesQuery.selectAll().subscribe(courses => {
+    this._coursesQuery.selectAllOrdered().subscribe(courses => {
       this.courses = courses;
       if (courses.length) {
         this.fields = Object.keys(courses[0]);
