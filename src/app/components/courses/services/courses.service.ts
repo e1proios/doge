@@ -7,23 +7,15 @@ import { CoursesStore } from '../store/courses.store';
 
 @Injectable()
 export class CoursesService {
-  private _idCounter;
-
   constructor(
     private _http: HttpClient,
     private _coursesStore: CoursesStore
   ) {}
 
   getCourses() {
-    this._http.get('/api/courses').subscribe(
-      (response: Course[]) => {
-        response.sort((first: Course, second: Course) => {
-          return first.id - second.id;
-        });
-        this._coursesStore.add(response);
-        this._idCounter = response[response.length - 1].id;
-      }
-    );
+    this._http.get('/api/courses').subscribe((response: Course[]) => {
+      this._coursesStore.initializeStore(response);
+    });
   }
   updateCourse(course: Partial<Course>) {
     let headers = new HttpHeaders().append('Content-Type', 'application/json');
@@ -41,9 +33,8 @@ export class CoursesService {
   addCourse({ name, description}: Partial<Course>) {
     let headers = new HttpHeaders().append('Content-Type', 'application/json');
 
-    ++this._idCounter;
     const newCourse = {
-      id: this._idCounter,
+      id: this._coursesStore.counter,
       active: true,
       name,
       description

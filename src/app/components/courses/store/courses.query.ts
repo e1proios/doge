@@ -11,4 +11,6 @@ export class CoursesQuery extends QueryEntity<CoursesState, Course> {
   constructor(protected store: CoursesStore) {
     super(store);
   }
+  selectAllOrdered() {
+  }
 }

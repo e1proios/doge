@@ -22,7 +22,13 @@
       "id": 4,
       "name": "How not to be gay",
       "description": "Simply stop enjoying sodomy every day, you disgusting homo!",
-      "active": true
+      "active": false
+    },
+    {
+      "id": 6,
+      "active": true,
+      "name": "How to get money and fuck bitches",
+      "description": "Words of wisdom from 2Pac, da real OG"
     }
   ]
 }
